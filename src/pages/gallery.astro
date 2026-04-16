@@ -1,0 +1,97 @@
+---
+import PageLayout from "@layouts/PageLayout.astro"
+import { SITE } from "@consts"
+
+// Row 1: 暖白/浅色系 — 白底词云、水彩手绘、MindKit、Wiki共学营
+const row1 = [
+  "/gallery/stickman-1.jpg",
+  "/gallery/cat-meme-2.jpg",
+  "/gallery/mindkit.jpg",
+  "/gallery/wiki-camp.jpg",
+  "/gallery/health-nutrition.jpg",
+]
+// Row 2: 黄橙/红暖色系 — 高饱和暖色（对比色行）
+const row2 = [
+  "/gallery/stickman-2.jpg",
+  "/gallery/stickman-4.jpg",
+  "/gallery/vibecoding.jpg",
+  "/gallery/red-envelope.jpg",
+]
+// Row 3: 深蓝紫暗色系 — ByteNeko、黑客松、深蓝
+const row3 = [
+  "/gallery/stickman-3.jpg",
+  "/gallery/cat-meme-1.jpg",
+  "/gallery/byteneko-purple.jpg",
+  "/gallery/byteneko-neon.jpg",
+  "/gallery/super-individual.jpg",
+]
+// Row 4: 青绿暗色系 — 黑青 + 深绿（对比色行）
+const row4 = [
+  "/gallery/design-1.jpg",
+  "/gallery/cat-meme-3.jpg",
+]
+// Row 5: 人物/混合 — 团队照、活动现场
+const row5 = [
+  "/gallery/team-photo.jpg",
+  "/gallery/vibecoding.jpg",
+  "/gallery/stickman-1.jpg",
+  "/gallery/mindkit.jpg",
+]
+
+const rows = [
+  { images: row1, label: "设计作品", speed: "45s" },
+  { images: row2, label: "设计作品", speed: "38s" },
+  { images: row3, label: "设计作品", speed: "50s" },
+  { images: row4, label: "设计作品", speed: "35s" },
+  { images: row5, label: "设计作品", speed: "42s" },
+]
+---
+
+<PageLayout title="Gallery" description="设计作品集展示">
+  <div class="relative bg-white dark:bg-black">
+    <div class="mx-auto max-w-screen-lg py-20 px-5 space-y-6">
+      <div class="animate text-center mb-12">
+        <h1 class="text-3xl font-bold text-black dark:text-white">Gallery</h1>
+        <p class="mt-2 opacity-75">设计作品与视觉素材</p>
+      </div>
+
+      {rows.map((row, idx) => (
+        <div class="animate overflow-hidden relative">
+          <div
+            class="flex gap-4 scroll-row"
+            style={`--speed: ${row.speed}; --direction: ${idx % 2 === 0 ? 'normal' : 'reverse'}`}
+          >
+            {[...row.images, ...row.images, ...row.images].map((src) => (
+              <img
+                src={src}
+                alt={row.label}
+                class="h-48 md:h-56 lg:h-64 w-auto rounded-lg object-cover flex-shrink-0"
+                loading="lazy"
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <style>
+    .scroll-row {
+      animation: scroll var(--speed) linear infinite var(--direction);
+      width: max-content;
+    }
+
+    .scroll-row:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-33.333%);
+      }
+    }
+  </style>
+</PageLayout>

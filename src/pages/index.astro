@@ -79,14 +79,58 @@ const stack = [
     <div class="animate absolute h-full w-full flex items-center justify-center">
       <div class='relative w-full h-full flex items-center justify-center'>
         <div class='p-5 text-center'>
+          <!-- Night Heron Avatar -->
+          <div class='animated flex justify-center mb-4'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" class="w-28 h-28 md:w-32 md:h-32">
+              <!-- Chubby round body -->
+              <ellipse cx="70" cy="85" rx="42" ry="38" fill="#d1d5db"/>
+              <!-- White belly/chest -->
+              <ellipse cx="70" cy="95" rx="30" ry="28" fill="#f5f5f4"/>
+              <!-- Blue-grey wing feathers left -->
+              <path d="M28 75 Q22 90 30 108 Q38 95 36 78Z" fill="#6b8fa3"/>
+              <!-- Blue-grey wing feathers right -->
+              <path d="M112 75 Q118 90 110 108 Q102 95 104 78Z" fill="#6b8fa3"/>
+              <!-- Blue-grey back/shoulders -->
+              <ellipse cx="70" cy="72" rx="35" ry="18" fill="#7a9bb0"/>
+              <!-- Head -->
+              <circle cx="70" cy="42" r="26" fill="#d1d5db"/>
+              <!-- White face patch -->
+              <path d="M50 38 Q55 52 70 56 Q85 52 90 38 Q82 44 70 46 Q58 44 50 38Z" fill="#f5f5f4"/>
+              <!-- Dark cap/crown -->
+              <path d="M44 38 Q48 16 70 14 Q92 16 96 38 Q88 24 70 22 Q52 24 44 38Z" fill="#1a2332"/>
+              <!-- Left eye - angry/grumpy -->
+              <ellipse cx="58" cy="40" rx="4.5" ry="4" fill="white"/>
+              <circle cx="59" cy="40" r="2.5" fill="#c0392b"/>
+              <circle cx="59.5" cy="39.5" r="1.2" fill="#1a1a1a"/>
+              <!-- Angry left eyebrow -->
+              <line x1="52" y1="33" x2="63" y2="35" stroke="#1a2332" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Right eye - angry/grumpy -->
+              <ellipse cx="82" cy="40" rx="4.5" ry="4" fill="white"/>
+              <circle cx="81" cy="40" r="2.5" fill="#c0392b"/>
+              <circle cx="80.5" cy="39.5" r="1.2" fill="#1a1a1a"/>
+              <!-- Angry right eyebrow -->
+              <line x1="88" y1="33" x2="77" y2="35" stroke="#1a2332" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Head plumes -->
+              <path d="M66 15 Q63 4 58 -2" stroke="#1a2332" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M70 14 Q70 2 72 -4" stroke="#1a2332" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M74 15 Q77 4 82 -2" stroke="#1a2332" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <!-- Beak - dark pointy -->
+              <path d="M64 48 L70 62 L76 48Z" fill="#2c3e50"/>
+              <!-- Tiny feet -->
+              <line x1="58" y1="120" x2="55" y2="132" stroke="#d4956a" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="58" y1="120" x2="61" y2="132" stroke="#d4956a" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="82" y1="120" x2="79" y2="132" stroke="#d4956a" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="82" y1="120" x2="85" y2="132" stroke="#d4956a" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
           <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
             Hello, I am ...
           </p>
           <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
-            Astro Sphere
+            Andy J
           </p>
           <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
-            Currently designing products for humans.
+            我是一只企鹅，如果你看成了叶鹭，说明你该休息了
           </p>
           <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
             <a href='/blog' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend'>
@@ -107,12 +151,14 @@ const stack = [
       <!-- About Section -->
       <section class="animate">
         <article>
-          <p>I am a <b><i>software engineer</i></b>, <b><i>ui/ux designer</i></b>, <b><i>product planner</i></b>, <b><i>mentor</i></b>, <b><i>student</i></b>, <b><i>minimalist</i></b>, <b><i>eternal optimist</i></b>, <b><i>crypto enthusiast</i></b> and <b><i>sarcasm connoisseur</i></b>.</p>
-          <p>I love to both build and break things. I am motivated by challenging projects with self-guided research and dynamic problem solving. My true passion is crafting creative front end designs with unique takes on color, typography and motion.</p>
-          <p>During my career</p>
-          <p>I have built products ranging from marketing and ecommerce websites to complex enterprise apps with focus on delivering fast, elegant code along with delightful user interfaces.</p>
-          <p>Now</p>
-          <p>I currently work as a software engineer at StreamlineFS, where I do product planning, design and development.</p>
+          <p>I am a <b><i>crypto operations specialist</i></b>, <b><i>community builder</i></b>, <b><i>product thinker</i></b>, <b><i>AI workflow explorer</i></b> and <b><i>vibe coder</i></b>.</p>
+          <p>I believe in building things that grow organically — communities, products, and ideas. I'm driven by turning chaos into systems: whether it's standardizing operational SOPs, designing growth funnels, or crafting AI-native workflows that replace repetitive work with reusable knowledge.</p>
+          <p>Currently</p>
+          <p>I'm interning at <b>MEXC</b> as a spot operations specialist, where I manage resource allocation, campaign lifecycle delivery, data analysis, and build AI-powered workflows (Claude Code + Obsidian) that compress days of research into hours.</p>
+          <p>Building</p>
+          <p>I'm co-founding <b>KitKit × Stello Agent</b>, an AI-native cognitive topology engine. I lead Xiaohongshu brand operations, commercialization strategy, and visual identity — growing 30k+ impressions in 3 days and 600+ beta users.</p>
+          <p>Background</p>
+          <p>Student at Civil Aviation University of China (GPA 3.7/4.0), with a research stint at HKU Business School. I've built Web3 communities from zero, led airdrop service groups generating 130k+ RMB, and founded a student entrepreneurship community with 100k+ GMV.</p>
         </article>
       </section>
 
