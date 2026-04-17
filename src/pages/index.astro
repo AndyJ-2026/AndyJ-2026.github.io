@@ -124,7 +124,8 @@ const stack = [
             </svg>
           </div>
           <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
-            Hello, I am ...
+            <span class="lang-zh">你好，我是</span>
+            <span class="lang-en hidden">Hello, I am ...</span>
           </p>
           <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
             Andy J
@@ -134,10 +135,12 @@ const stack = [
           </p>
           <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
             <a href='/blog' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend'>
-              Read my blog
+              <span class="lang-zh">看看博客</span>
+              <span class="lang-en hidden">Read my blog</span>
             </a>
             <a href='/work' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend'>
-              View my work
+              <span class="lang-zh">我的经历</span>
+              <span class="lang-en hidden">View my work</span>
             </a>
           </div>
         </div>
@@ -150,7 +153,17 @@ const stack = [
 
       <!-- About Section -->
       <section class="animate">
-        <article>
+        <article class="lang-zh">
+          <p>我是一名<b><i>加密货币运营专家</i></b>、<b><i>社区搭建者</i></b>、<b><i>产品思考者</i></b>、<b><i>AI 工作流探索者</i></b>，也是一名<b><i>vibe coder</i></b>。</p>
+          <p>我相信有机生长的力量 — 无论是社区、产品还是想法。我的驱动力是把混沌变成系统：标准化运营 SOP、设计增长漏斗、或者构建 AI 原生工作流，用可复用的知识替代重复性劳动。</p>
+          <p>目前</p>
+          <p>我在 <b>MEXC</b> 实习，担任现货运营专员。负责资源调配、活动全生命周期交付、数据分析，并搭建 AI 驱动的工作流（Claude Code + Obsidian），把几天的研究压缩到几小时。</p>
+          <p>在做的事</p>
+          <p>我在联合创建 <b>KitKit × Stello Agent</b>，一个 AI 原生的认知拓扑引擎。我负责小红书品牌运营、商业化策略和视觉设计 — 3 天内获得 3 万+ 曝光和 600+ 内测用户。</p>
+          <p>背景</p>
+          <p>中国民航大学在读（GPA 3.7/4.0），曾在香港大学商学院做研究。从零搭建过 Web3 社区，带领空投服务群创收 13 万+ 人民币，创立了一个 GMV 超 10 万的学生创业社区。</p>
+        </article>
+        <article class="lang-en hidden">
           <p>I am a <b><i>crypto operations specialist</i></b>, <b><i>community builder</i></b>, <b><i>product thinker</i></b>, <b><i>AI workflow explorer</i></b> and <b><i>vibe coder</i></b>.</p>
           <p>I believe in building things that grow organically — communities, products, and ideas. I'm driven by turning chaos into systems: whether it's standardizing operational SOPs, designing growth funnels, or crafting AI-native workflows that replace repetitive work with reusable knowledge.</p>
           <p>Currently</p>
@@ -167,11 +180,13 @@ const stack = [
         <div class="space-y-4">
           <div class="flex justify-between">
             <p class="font-semibold text-black dark:text-white">
-              Recent posts
+              <span class="lang-zh">最新文章</span>
+              <span class="lang-en hidden">Recent posts</span>
             </p>
             <a href="/blog" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
               <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                All posts
+                <span class="lang-zh">全部文章</span>
+                <span class="lang-en hidden">All posts</span>
               </span>
             </a>
           </div>
@@ -189,11 +204,12 @@ const stack = [
       <section class="animate">
         <div class="space-y-4">
           <p class="font-semibold text-black dark:text-white">
-            Website build with
+            <span class="lang-zh">本站技术栈</span>
+            <span class="lang-en hidden">Website build with</span>
           </p>
           <div class="flex flex-wrap items-center gap-2 mt-5">
             {stack.map(item => (
-              <StackCard 
+              <StackCard
                 text={item.text}
                 icon={item.icon}
                 href={item.href}
@@ -201,12 +217,14 @@ const stack = [
             ))}
           </div>
           <div>
-            Performing reactivity and statefulness, special guest
+            <span class="lang-zh">响应式与状态管理由特邀嘉宾</span>
+            <span class="lang-en hidden">Performing reactivity and statefulness, special guest</span>
             <a href="https://www.solidjs.com/" target="_blank" class="w-fit group underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
               <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
                 SolidJS
               </span>
             </a>
+            <span class="lang-zh">提供支持</span>
           </div>
         </div>
       </section>
@@ -216,11 +234,13 @@ const stack = [
         <div class="space-y-4">
           <div class="flex justify-between">
             <p class="font-semibold text-black dark:text-white">
-              Recent projects
+              <span class="lang-zh">最新项目</span>
+              <span class="lang-en hidden">Recent projects</span>
             </p>
             <a href="/projects" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
               <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                All projects
+                <span class="lang-zh">全部项目</span>
+                <span class="lang-en hidden">All projects</span>
               </span>
             </a>
           </div>
@@ -238,10 +258,12 @@ const stack = [
       <section class="animate">
         <div>
           <p class="font-semibold text-black dark:text-white">
-            Let's Connect
+            <span class="lang-zh">联系我</span>
+            <span class="lang-en hidden">Let's Connect</span>
           </p>
           <p>
-            Reach out to me via email or on social media.
+            <span class="lang-zh">通过邮件或社交媒体找到我。</span>
+            <span class="lang-en hidden">Reach out to me via email or on social media.</span>
           </p>
           <div class="grid grid-cols-4 gap-y-2 mt-4 auto-cols-min">
             {SOCIALS.map(social => (
@@ -262,4 +284,39 @@ const stack = [
       </section>
     </div>
   </div>
+
+  <!-- Language Toggle Script -->
+  <script is:inline>
+    function setLang(lang) {
+      document.querySelectorAll('.lang-zh').forEach(el => {
+        el.classList.toggle('hidden', lang !== 'zh');
+      });
+      document.querySelectorAll('.lang-en').forEach(el => {
+        el.classList.toggle('hidden', lang !== 'en');
+      });
+      var label = lang === 'zh' ? 'EN' : '中';
+      var btn = document.getElementById('lang-toggle');
+      var btnM = document.getElementById('lang-toggle-mobile');
+      if (btn) btn.textContent = label;
+      if (btnM) btnM.textContent = label;
+      localStorage.setItem('lang', lang);
+    }
+
+    function toggleLang() {
+      var current = localStorage.getItem('lang') || 'zh';
+      setLang(current === 'zh' ? 'en' : 'zh');
+    }
+
+    function initLang() {
+      var lang = localStorage.getItem('lang') || 'zh';
+      setLang(lang);
+      var btn = document.getElementById('lang-toggle');
+      var btnM = document.getElementById('lang-toggle-mobile');
+      if (btn) btn.addEventListener('click', toggleLang);
+      if (btnM) btnM.addEventListener('click', toggleLang);
+    }
+
+    document.addEventListener('astro:after-swap', initLang);
+    initLang();
+  </script>
 </PageLayout>
