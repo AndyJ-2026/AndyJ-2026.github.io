@@ -70,10 +70,16 @@ export const SOCIALS: Socials = [
     HREF: "https://twitter.com/ByteNeko2025",
   },
   {
-    NAME: "WeChat",
+    NAME: "GitHub",
     ICON: "github",
+    TEXT: "AndyJ-2026",
+    HREF: "https://github.com/AndyJ-2026",
+  },
+  {
+    NAME: "WeChat",
+    ICON: "wechat",
     TEXT: "nbrj2004",
-    HREF: "#",
+    HREF: "#wechat-qr",
   },
 ]
 

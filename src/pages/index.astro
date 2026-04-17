@@ -273,15 +273,40 @@ const stack = [
                 </span>
               </div>
               <div class="col-span-3 truncate">
-                <a href={social.HREF} target="_blank" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-                  <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                    {social.TEXT}
-                  </span>
-                </a>
+                {social.HREF === "#wechat-qr" ? (
+                  <button data-wechat-trigger class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend cursor-pointer">
+                    <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
+                      {social.TEXT}
+                    </span>
+                  </button>
+                ) : (
+                  <a href={social.HREF} target="_blank" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
+                    <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
+                      {social.TEXT}
+                    </span>
+                  </a>
+                )}
               </div>
             ))}
         </div>
       </section>
+    </div>
+  </div>
+
+  <!-- WeChat QR Code Modal -->
+  <div id="wechat-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm">
+    <div class="relative bg-white dark:bg-neutral-900 rounded-2xl p-6 mx-4 max-w-xs w-full shadow-2xl">
+      <button id="wechat-modal-close" class="absolute top-3 right-3 size-8 flex items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <p class="text-center font-semibold text-black dark:text-white mb-4">
+        <span class="lang-zh">扫码加微信</span>
+        <span class="lang-en hidden">Scan to add WeChat</span>
+      </p>
+      <img src="/wechat-qr.png" alt="WeChat QR Code" class="w-full rounded-lg" />
     </div>
   </div>
 
@@ -318,5 +343,29 @@ const stack = [
 
     document.addEventListener('astro:after-swap', initLang);
     initLang();
+
+    function initWechatModal() {
+      var modal = document.getElementById('wechat-modal');
+      var closeBtn = document.getElementById('wechat-modal-close');
+      if (!modal) return;
+      document.querySelectorAll('[data-wechat-trigger]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        });
+      });
+      if (closeBtn) closeBtn.addEventListener('click', function() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      });
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      });
+    }
+    document.addEventListener('astro:after-swap', initWechatModal);
+    initWechatModal();
   </script>
 </PageLayout>
