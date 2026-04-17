@@ -20,5 +20,39 @@ import { SITE } from "@consts"
       <slot />
     </main>
     <Footer />
+
+    <script is:inline>
+      function setLang(lang) {
+        document.querySelectorAll('.lang-zh').forEach(function(el) {
+          el.classList.toggle('hidden', lang !== 'zh');
+        });
+        document.querySelectorAll('.lang-en').forEach(function(el) {
+          el.classList.toggle('hidden', lang !== 'en');
+        });
+        var label = lang === 'zh' ? 'EN' : '中';
+        var btn = document.getElementById('lang-toggle');
+        var btnM = document.getElementById('lang-toggle-mobile');
+        if (btn) btn.textContent = label;
+        if (btnM) btnM.textContent = label;
+        localStorage.setItem('lang', lang);
+      }
+
+      function toggleLang() {
+        var current = localStorage.getItem('lang') || 'zh';
+        setLang(current === 'zh' ? 'en' : 'zh');
+      }
+
+      function initLang() {
+        var lang = localStorage.getItem('lang') || 'zh';
+        setLang(lang);
+        var btn = document.getElementById('lang-toggle');
+        var btnM = document.getElementById('lang-toggle-mobile');
+        if (btn) btn.addEventListener('click', toggleLang);
+        if (btnM) btnM.addEventListener('click', toggleLang);
+      }
+
+      document.addEventListener('astro:after-swap', initLang);
+      initLang();
+    </script>
   </body>
 </html>

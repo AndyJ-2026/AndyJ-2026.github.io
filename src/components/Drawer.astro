@@ -10,7 +10,8 @@ const subpath = pathname.match(/[^/]+/g)
     {
       LINKS.map((LINK) => (
         <a href={LINK.HREF} class={cn("flex items-center justify-center px-3 py-1 rounded-full", "text-current hover:text-black dark:hover:text-white", "hover:bg-black/5 dark:hover:bg-white/20", "transition-colors duration-300 ease-in-out", pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
-          {LINK.TEXT}
+          <span class="lang-zh">{LINK.TEXT_ZH || LINK.TEXT}</span>
+          <span class="lang-en hidden">{LINK.TEXT}</span>
         </a>
       ))
     }

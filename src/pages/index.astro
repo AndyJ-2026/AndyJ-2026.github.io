@@ -131,7 +131,8 @@ const stack = [
             Andy J
           </p>
           <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
-            我是一只企鹅，如果你看成了叶鹭，说明你该休息了
+            <span class="lang-zh">我是一只企鹅，如果你看成了叶鹭，说明你该休息了</span>
+            <span class="lang-en hidden">I'm a penguin. If you saw a night heron, you need some rest.</span>
           </p>
           <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
             <a href='/blog' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend'>
@@ -224,7 +225,8 @@ const stack = [
                 SolidJS
               </span>
             </a>
-            <span class="lang-zh">提供支持</span>
+            <span class="lang-zh"> 提供支持</span>
+            <span class="lang-en hidden"></span>
           </div>
         </div>
       </section>
@@ -310,40 +312,8 @@ const stack = [
     </div>
   </div>
 
-  <!-- Language Toggle Script -->
+  <!-- WeChat Modal Script -->
   <script is:inline>
-    function setLang(lang) {
-      document.querySelectorAll('.lang-zh').forEach(el => {
-        el.classList.toggle('hidden', lang !== 'zh');
-      });
-      document.querySelectorAll('.lang-en').forEach(el => {
-        el.classList.toggle('hidden', lang !== 'en');
-      });
-      var label = lang === 'zh' ? 'EN' : '中';
-      var btn = document.getElementById('lang-toggle');
-      var btnM = document.getElementById('lang-toggle-mobile');
-      if (btn) btn.textContent = label;
-      if (btnM) btnM.textContent = label;
-      localStorage.setItem('lang', lang);
-    }
-
-    function toggleLang() {
-      var current = localStorage.getItem('lang') || 'zh';
-      setLang(current === 'zh' ? 'en' : 'zh');
-    }
-
-    function initLang() {
-      var lang = localStorage.getItem('lang') || 'zh';
-      setLang(lang);
-      var btn = document.getElementById('lang-toggle');
-      var btnM = document.getElementById('lang-toggle-mobile');
-      if (btn) btn.addEventListener('click', toggleLang);
-      if (btnM) btnM.addEventListener('click', toggleLang);
-    }
-
-    document.addEventListener('astro:after-swap', initLang);
-    initLang();
-
     function initWechatModal() {
       var modal = document.getElementById('wechat-modal');
       var closeBtn = document.getElementById('wechat-modal-close');

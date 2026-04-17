@@ -33,24 +33,29 @@ export const SEARCH: Page = {
 
 // Links
 export const LINKS: Links = [
-  { 
-    TEXT: "Home", 
-    HREF: "/", 
+  {
+    TEXT: "Home",
+    TEXT_ZH: "首页",
+    HREF: "/",
   },
-  { 
-    TEXT: "Work", 
-    HREF: "/work", 
+  {
+    TEXT: "Work",
+    TEXT_ZH: "经历",
+    HREF: "/work",
   },
-  { 
-    TEXT: "Blog", 
-    HREF: "/blog", 
+  {
+    TEXT: "Blog",
+    TEXT_ZH: "博客",
+    HREF: "/blog",
   },
   {
     TEXT: "Projects",
+    TEXT_ZH: "项目",
     HREF: "/projects",
   },
   {
     TEXT: "Gallery",
+    TEXT_ZH: "画廊",
     HREF: "/gallery",
   },
 ]

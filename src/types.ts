@@ -9,6 +9,7 @@ export interface Site extends Page {
 
 export type Links = {
   TEXT: string
+  TEXT_ZH?: string
   HREF: string
 }[]
 
